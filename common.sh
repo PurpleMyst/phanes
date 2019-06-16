@@ -6,13 +6,7 @@ copy_files() {
         return 1
     fi
 
-    target="$1"
-    shift
-
-    while [ $# -ne 0 ]; do
-        cp "$(dirname "$0")/files/$1" "$target"
-        shift
-    done
+    find "$(dirname "$0")/files/" -mindepth 1 -prune -exec cp -vr {} "$1" \;
 }
 
 author() {

@@ -1,18 +1,6 @@
 // jshint node: true, esversion: 6
 
 const resolve = require("path").resolve;
-const packageInfo = require("./package.json");
-const webpack = require("webpack");
-
-const TerserPlugin = require("terser-webpack-plugin");
-
-function parsePackageInfo([key, value]) {
-  if (Array.isArray(value)) {
-    return value.map(value => parsePackageInfo([key, value]));
-  } else {
-    return `// @${key} ${value}`;
-  }
-}
 
 module.exports = {
   entry: "./userscript.ts",
@@ -23,22 +11,6 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js"]
-  },
-  plugins: [
-    new webpack.BannerPlugin({
-      banner:
-        [
-          "// ==UserScript==",
-          ...Object.entries(packageInfo.userscript).flatMap(parsePackageInfo),
-          "// ==/UserScript=="
-        ].join("\n") + "\n",
-      raw: true
-    })
-  ],
-  optimization: {
-    minimizer: [
-      new TerserPlugin({ terserOptions: { output: { comments: true } } })
-    ]
   },
   module: {
     rules: [

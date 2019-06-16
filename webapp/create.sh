@@ -35,8 +35,6 @@ yarn add --dev \
 jq '.' package.json \
     | jq '.license = "MIT"' \
     | jq ".author = \"$(author)\"" \
-    | jq ".userscript.name = $(jq ".name" package.json)"\
-    | jq ".userscript.author = \"$(author)\"" \
     | sponge package.json
 
 download_license mit

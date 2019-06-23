@@ -25,12 +25,7 @@ git init
 
 yarn init -y --private
 
-yarn add --dev \
-    webpack webpack-cli \
-    babel-loader \
-    @babel/core \
-    @babel/plugin-proposal-class-properties @babel/plugin-syntax-dynamic-import \
-    @babel/preset-env @babel/preset-typescript
+yarn add --dev rollup
 
 jq '.' package.json \
     | jq '.license = "MIT"' \

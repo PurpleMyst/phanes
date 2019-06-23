@@ -15,9 +15,10 @@ Dependencies
 Installation
 ------------
 
-    $ wget -O phanes.zip https://github.com/PurpleMyst/phanes/archive/master.zip
-    $ unzip phanes && cd phanes-master
-    $ ln -s $(realpath dispatcher.sh) ~/bin/phanes && chmod +x ~/bin/phanes
+    $ wget -O /tmp/phanes.zip https://github.com/PurpleMyst/phanes/archive/master.zip
+    $ unzip /tmp/phanes.zip -d "$HOME/.phanes"
+    $ ln -s "$HOME/.phanes/dispatcher.sh" "$HOME/.local/bin/phanes"
+    $ chmod +x "$HOME/.local/bin/phanes"
 
 Usage
 -----

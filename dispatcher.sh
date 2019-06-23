@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 if [ $# -lt 1 ]; then
+    printf "usage: phanes TEMPLATENAME [ ARGS ... ]\n"
     exit 1
 fi
 

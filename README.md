@@ -11,3 +11,13 @@ Dependencies
 - pup
 - wget
 - moreutils
+
+Installation
+------------
+
+    $ ln -s $(realpath dispatcher.sh) ~/bin/phanes && chmod +x ~/bin/phanes
+
+Usage
+-----
+
+    $ phanes TEMPLATENAME [ ARGS ... ]
